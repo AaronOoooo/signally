@@ -8,4 +8,8 @@ class SignallyController < ApplicationController
     @message = "Signally provides you with details about the sports actions with information about scores, teams and the individuals who play at their hardest."
   end
 
+  def weather
+    @message = "Signally tells you whether to prepare for fun in the sun or whether it's going to be an umbrella and galoshes kind of day by providing you with weather indformation."
+  end
+
 end
