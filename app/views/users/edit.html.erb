@@ -1,0 +1,30 @@
+<%= form_tag "/users/#{@user.id}", method: :patch do %>
+
+  <div>
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, @user.first_name %>
+  </div>
+  <div>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, @user.last_name %>
+  </div>
+  <div>
+    <%= label_tag :username %>
+    <%= text_field_tag :username, @user.username %>
+  </div>
+  <div>
+    <%= label_tag :city %>
+    <%= text_field_tag :city, @user.city %>
+  </div>
+  <div>
+    <%= label_tag :state %>
+    <%= text_field_tag :state, @user.state %>
+  </div>
+  <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, @user.email %>
+  </div>
+
+  <%= submit_tag 'Update Info' %>
+  
+<% end %>
