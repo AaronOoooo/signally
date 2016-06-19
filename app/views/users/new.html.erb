@@ -1,7 +1,12 @@
 <h1>Signally SignUp</h1>
 
 <%= form_for :user, url: '/users' do | f | %>
-  Name: <%= f.text_field :username %><br>
+  First Name: <%= f.text_field :first_name, :maxlength=>"30" %><br>
+  Last Name: <%= f.text_field :last_name %><br>
+  Username: <%= f.text_field :username %><br>
+  City: <%= f.text_field :city %><br>
+  State: <%= f.text_field :state %><br>
+
   Email: <%= f.text_field :email %><br>
   Password: <%= f.password_field :password %><br>
   Password Confirmation: <%= f.password_field :password_confirmation %><br>
