@@ -9,9 +9,9 @@
 <body class='body-background'>
   <% num = rand(2) %>
   <% if num == 0 %>
-    <%= image_tag('Signally.jpg', :alt => 'Signally News') %>
+    <%= link_to(image_tag("Signally.jpg", :alt => "Signally logo", :title => "Home"), "/") %>
   <% else %>
-    <%= image_tag('Signally.jpg', :alt => 'Signally News') %>
+    <%= link_to(image_tag("Signally.jpg", :alt => "Signally logo", :title => "Home"), "/") %>
   <% end %>
 <br>
   <% if current_user %>
