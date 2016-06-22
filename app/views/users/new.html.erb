@@ -9,7 +9,11 @@
   <br>
   Email: <%= f.text_field :email %><br>
   Password: <%= f.password_field :password %><br>
-  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br><br>
+  <h2>Your Subscriptions</h2>
+  News (y/n): <%= f.text_field :news_subscription %><br>
+  Sports (y/n): <%= f.text_field :sports_subscription %><br>
+  Weather (y/n): <%= f.text_field :weather %><br>
   
   <%= f.submit "Submit" %>
 

@@ -2,6 +2,12 @@
 
 <body>
 
-  <h3><%= @message %></h3>
+  <h4><%= @message %></h4>
+  <h3>News</h3>
+  <% @articles.each do |article|  %>
+  <li><%= link_to article.title, "/articles/#{article.id}" %></li><br> 
+
+    <% end  %>
+
 
 </body>

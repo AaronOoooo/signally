@@ -24,6 +24,31 @@
     <%= label_tag :email %>
     <%= text_field_tag :email, @user.email %>
   </div>
+  <div>
+    <%= label_tag :password %>
+    <%= text_field_tag :password, @user.password %>
+  </div>
+  <div>
+    <%= label_tag :password_confirmation %>
+    <%= text_field_tag :password_confirmation, @user.password_confirmation %>
+  </div>
+  <br>
+  <h2>Your Subscriptions</h2>
+  <div>
+    <%= label_tag :news_subscription %>
+    <%= text_field_tag :news_subscription, @user.news_subscription %>
+  </div>
+  <div>
+    <%= label_tag :sports_subscription %>
+    <%= text_field_tag :sports_subscription, @user.sports_subscription %>
+  </div>
+  <div>
+    <%= label_tag :weather %>
+    <%= text_field_tag :weather, @user.weather %>
+  </div>
+
+  
+
 
   <%= submit_tag 'Update Info' %>
   
