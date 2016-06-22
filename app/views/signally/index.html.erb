@@ -5,9 +5,16 @@
   <h4><%= @message %></h4>
   <h3>News</h3>
   <% @articles.each do |article|  %>
-  <li><%= link_to article.title, "/articles/#{article.id}" %></li><br> 
-
+    <% if article.kind == "news" %> 
+      <li><%= link_to article.title, article.url %></li><br> 
     <% end  %>
+  <% end %>
 
+  <h3>Sports</h3>
+  <% @articles.each do |article|  %>
+    <% if article.kind == "sports" %> 
+      <li><%= link_to article.title, article.url %></li><br> 
+    <% end  %>
+  <% end %>
 
 </body>
