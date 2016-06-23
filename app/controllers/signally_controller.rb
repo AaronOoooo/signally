@@ -3,6 +3,7 @@ class SignallyController < ApplicationController
   def index
     @message = "Welcome to Signally, an convenient, informational web app that gives you news tailored to met the needs of your lifestyle."
     @articles = Article.all
+
   end
 
   def sports

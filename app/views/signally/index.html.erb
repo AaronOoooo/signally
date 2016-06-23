@@ -1,8 +1,18 @@
+<% require 'open-uri' %>
+
 <h1>Signally</h1>
 
 <body>
 
-  <h4><%= @message %></h4>
+<% rss = SimpleRSS.parse open('http://feeds.reuters.com/reuters/topNews') %>
+
+<h1><%= rss.channel.title  %></h1>
+<p><%= rss.channel.link  %></p>
+<a href="<%= rss.items.first.link %>">Link</a>
+
+
+
+ <!--  <h4><%= @message %></h4>
   <h3>News</h3>
   <% @articles.each do |article|  %>
     <% if article.kind == "news" %> 
@@ -16,5 +26,7 @@
       <li><%= link_to article.title, article.url %></li><br> 
     <% end  %>
   <% end %>
+
+ -->
 
 </body>

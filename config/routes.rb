@@ -20,10 +20,7 @@ Rails.application.routes.draw do
   get '/weather' => 'signally#weather'
   get '/about' => 'signally#about'
 
-  get '/articles/:id' => 'articles#index' 
- 
-
-
- 
+  get '/articles/:id' => 'articles#index'
+  
 
 end
