@@ -1,32 +1,33 @@
 <% require 'open-uri' %>
 
-<h1>Signally</h1>
-
 <body>
+<% rssTopNews = SimpleRSS.parse open('http://feeds.reuters.com/reuters/topNews') %>
 
-<% rss = SimpleRSS.parse open('http://feeds.reuters.com/reuters/topNews') %>
+<h2><%= rssTopNews.channel.title  %></h2>
+<ul>
+  <li><% headline = rssTopNews.entries.first.title %> 
+  <%= link_to "#{headline}", rssTopNews.items.first.link %>
 
-<h1><%= rss.channel.title  %></h1>
-<p><%= rss.channel.link  %></p>
-<a href="<%= rss.items.first.link %>">Link</a>
+  <li><% headline = rssTopNews.entries.second.title %>
+  <%= link_to "#{headline}", rssTopNews.items.second.link %>
 
+  <li><% headline = rssTopNews.entries.third.title %>
+  <%= link_to "#{headline}", rssTopNews.items.third.link %>
+</ul>
 
+<% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %>
 
- <!--  <h4><%= @message %></h4>
-  <h3>News</h3>
-  <% @articles.each do |article|  %>
-    <% if article.kind == "news" %> 
-      <li><%= link_to article.title, article.url %></li><br> 
-    <% end  %>
-  <% end %>
+<h2><%= rssSports.channel.title  %></h2>
+<ul>
+  <li><% headline = rssSports.entries.first.title %> 
+  <%= link_to "#{headline}", rssSports.items.first.link %>
 
-  <h3>Sports</h3>
-  <% @articles.each do |article|  %>
-    <% if article.kind == "sports" %> 
-      <li><%= link_to article.title, article.url %></li><br> 
-    <% end  %>
-  <% end %>
+  <li><% headline = rssSports.entries.second.title %>
+  <%= link_to "#{headline}", rssSports.items.second.link %>
 
- -->
+  <li><% headline = rssSports.entries.third.title %>
+  <%= link_to "#{headline}", rssSports.items.third.link %>
+</ul>
+
 
 </body>
