@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/about' => 'signally#about'
 
   get '/articles/:id' => 'articles#index'
+
+  get '/news' => 'signally#news'
   
 
 end

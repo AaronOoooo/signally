@@ -1,0 +1,35 @@
+DENNISE: THE STUFF BELOW
+
+
+<a href="<%= @news_entries.first.link %>"><p><%= @news_entries.first.title %></p></a>
+<a href="<%= @news_entries.second.link %>"><p><%= @news_entries.second.title %></p></a>
+<p><%= @news_entries.third.title %></p>
+<p><%= @news_entries.fourth.title %></p>
+<% @rss_sports %>
+
+<!-- STUFF BELOW WORKS FINE TAKEN OUT  -->
+<h2><%= rssTopNews.channel.title  %></h2>
+<ul>
+  <li><% headline = rssTopNews.entries.first.title %> 
+  <%= link_to "#{headline}", rssTopNews.items.first.link %>
+
+  <li><% headline = rssTopNews.entries.second.title %>
+  <%= link_to "#{headline}", rssTopNews.items.second.link %>
+
+  <li><% headline = rssTopNews.entries.third.title %>
+  <%= link_to "#{headline}", rssTopNews.items.third.link %>
+</ul>
+
+<% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %>
+
+<h2><%= rssSports.channel.title  %></h2>
+<ul>
+  <li><% headline = rssSports.entries.first.title %> 
+  <%= link_to "#{headline}", rssSports.items.first.link %>
+
+  <li><% headline = rssSports.entries.second.title %>
+  <%= link_to "#{headline}", rssSports.items.second.link %>
+
+  <li><% headline = rssSports.entries.third.title %>
+  <%= link_to "#{headline}", rssSports.items.third.link %>
+</ul> 

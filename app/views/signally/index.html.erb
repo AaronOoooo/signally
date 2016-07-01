@@ -1,18 +1,33 @@
 <% require 'open-uri' %>
 
-<body>
-<% rssTopNews = SimpleRSS.parse open('http://feeds.reuters.com/reuters/topNews') %>
+<div id="test" >hello my name is earl, I like to play football and dance like a lily flower. </div>
 
-<h2><%= rssTopNews.channel.title  %></h2>
+<h2><%= @rss_news.channel.title  %></h2>
+
 <ul>
-  <li><% headline = rssTopNews.entries.first.title %> 
-  <%= link_to "#{headline}", rssTopNews.items.first.link %>
+  <li><% headline = @rss_news.entries.first.title %>
+  <%= link_to "#{headline}", @rss_news.items.first.link %>
+  <div id="headline_scroll"><%= headline %></div>
 
-  <li><% headline = rssTopNews.entries.second.title %>
-  <%= link_to "#{headline}", rssTopNews.items.second.link %>
+  <li><% headline = @rss_news.entries.second.title %>
+  <%= link_to "#{headline}", @rss_news.items.second.link %>
+  <div id="headline_scroll"><%= headline %></div>
 
-  <li><% headline = rssTopNews.entries.third.title %>
-  <%= link_to "#{headline}", rssTopNews.items.third.link %>
+  <li><% headline = @rss_news.entries.third.title %>
+  <%= link_to "#{headline}", @rss_news.items.third.link %>
+  <div id="headline_scroll"><%= headline %></div>
+
+  <li><% headline = @rss_news.entries.fourth.title %> 
+  <%= link_to "#{headline}", @rss_news.items.fourth.link %>
+  <div id="headline_scroll"><%= headline %></div>
+
+  <li><% headline = @rss_news.entries.fifth.title %> 
+  <%= link_to "#{headline}", @rss_news.items.fifth.link %>
+  <div id="headline_scroll"><%= headline %></div>
+
+  <li><% headline = @rss_news.entries.last.title %> 
+  <%= link_to "#{headline}", @rss_news.items.last.link %>
+  <div id="headline_scroll"><%= headline %></div>
 </ul>
 
 <% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %>
@@ -27,7 +42,14 @@
 
   <li><% headline = rssSports.entries.third.title %>
   <%= link_to "#{headline}", rssSports.items.third.link %>
-</ul>
 
+  <li><% headline = rssSports.entries.fourth.title %>
+  <%= link_to "#{headline}", rssSports.items.fourth.link %>
 
-</body>
+  <li><% headline = rssSports.entries.fifth.title %>
+  <%= link_to "#{headline}", rssSports.items.fifth.link %>
+
+  <li><% headline = rssSports.entries.last.title %>
+  <%= link_to "#{headline}", rssSports.items.last.link %>
+</ul> 
+<% @rss_sports %>
