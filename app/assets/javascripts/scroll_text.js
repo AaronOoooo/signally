@@ -8,3 +8,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     intialElement.innerHTML = restOfString + shiftCharacter;
   },200);
 });
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var intialElement = document.getElementById('sport_scroll');
+
+  setInterval(function(){
+    var arr = intialElement.innerHTML.split("");
+    var shiftCharacter = arr.shift();
+    var restOfString = arr.join("");
+    intialElement.innerHTML = restOfString + shiftCharacter;
+  },200);
+});
