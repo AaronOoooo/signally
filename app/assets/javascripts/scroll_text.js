@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var shiftCharacter = arr.shift();
     var restOfString = arr.join("");
     intialElement.innerHTML = restOfString + shiftCharacter;
-  },200);
+  },250);
 });
 
 document.addEventListener("DOMContentLoaded", function(event) { 

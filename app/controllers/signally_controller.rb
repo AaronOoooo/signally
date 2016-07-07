@@ -39,7 +39,6 @@ class SignallyController < ApplicationController
   def news
     @rss_news = SimpleRSS.parse open('http://feeds.reuters.com/reuters/topNews')
     @rss_news_title = @rss_news.entries.first.title
-
     
     @rss_sports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews')
   end

@@ -34,21 +34,8 @@
   </div>
   <br>
   <h2>Your Subscriptions</h2>
-  <div>
-    <%= label_tag :news_subscription %>
-    <%= text_field_tag :news_subscription, @user.news_subscription %>
-  </div>
-  <div>
-    <%= label_tag :sports_subscription %>
-    <%= text_field_tag :sports_subscription, @user.sports_subscription %>
-  </div>
-  <div>
-    <%= label_tag :weather %>
-    <%= text_field_tag :weather, @user.weather %>
-  </div>
-
   
-
+  <%= render partial: "form" %>
 
   <%= submit_tag 'Update Info' %>
   

@@ -1,6 +1,23 @@
-<h1>Signally</h1>
+<% require 'open-uri' %>
 
-  <body>
-    <h3><%= @message %></h3>
-    <%= image_tag('sports-games.jpg', :alt => 'Signally Sports') %>
-  </body>
+<% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %>
+
+<h2><%= rssSports.channel.title  %></h2>
+  <% sport1 = rssSports.entries.first.title %> 
+  <%= link_to "#{sport1}", rssSports.items.first.link %>
+
+  <% sport2 = rssSports.entries.second.title %>
+  <%= link_to "#{sport2}", rssSports.items.second.link %>
+
+  <% sport3 = rssSports.entries.third.title %>
+  <%= link_to "#{sport3}", rssSports.items.third.link %>
+
+  <% sport4 = rssSports.entries.fourth.title %>
+  <%= link_to "#{sport4}", rssSports.items.fourth.link %>
+
+  <% sport5 = rssSports.entries.fifth.title %>
+  <%= link_to "#{sport5}", rssSports.items.fifth.link %>
+
+  <% sport_last = rssSports.entries.last.title %>
+  <%= link_to "#{sport_last}", rssSports.items.last.link %>
+

@@ -1,60 +1,64 @@
 <% require 'open-uri' %>
 
-<div id="test" >hello my name is earl, I like to play football and dance like a lily flower. </div>
-
 <h2><%= @rss_news.channel.title  %></h2>
+<% title = @rss_news.channel.title %>
 
-<ul>
-  <li><% headline1 = @rss_news.entries.first.title %>
-  <%= link_to "#{headline1}", @rss_news.items.first.link %>
+<% headline1 = @rss_news.entries.first.title %>
+  <% link_to "#{headline1}", @rss_news.items.first.link %>
 
-  <li><% headline2 = @rss_news.entries.second.title %>
-  <%= link_to "#{headline2}", @rss_news.items.second.link %>
+  <% headline2 = @rss_news.entries.second.title %>
+  <% link_to "#{headline2}", @rss_news.items.second.link %>
 
-  <li><% headline3 = @rss_news.entries.third.title %>
-  <%= link_to "#{headline3}", @rss_news.items.third.link %>
+  <% headline3 = @rss_news.entries.third.title %>
+  <% link_to "#{headline3}", @rss_news.items.third.link %>
 
-  <li><% headline4 = @rss_news.entries.fourth.title %> 
-  <%= link_to "#{headline4}", @rss_news.items.fourth.link %>
+  <% headline4 = @rss_news.entries.fourth.title %> 
+  <% link_to "#{headline4}", @rss_news.items.fourth.link %>
 
-  <li><% headline5 = @rss_news.entries.fifth.title %> 
-  <%= link_to "#{headline5}", @rss_news.items.fifth.link %>
+  <% headline5 = @rss_news.entries.fifth.title %> 
+  <% link_to "#{headline5}", @rss_news.items.fifth.link %>
 
-  <li><% headline_last = @rss_news.entries.last.title %> 
-  <%= link_to "#{headline_last}", @rss_news.items.last.link %>
-</ul>
+  <% headline_last = @rss_news.entries.last.title %> 
+  <% link_to "#{headline_last}", @rss_news.items.last.link %>
+
 
 <div id="headline_scroll">
   <%= headline1 + " * * * * " + headline2 + " * * * * " +
-  headline3 + " * * * * " + headline4 + " * * * * "
+  headline3 + " * * * * " + headline4 + " * * * * " +
   headline5 + " * * * * " + headline_last%>
 </div>
 
 <% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %>
 
-<h6><%= rssSports.channel.title  %></h6>
-<ul>
-  <li><% sport1 = rssSports.entries.first.title %> 
-  <%= link_to "#{sport1}", rssSports.items.first.link %>
+<h2><%= rssSports.channel.title  %></h2>
 
-  <li><% sport2 = rssSports.entries.second.title %>
-  <%= link_to "#{sport2}", rssSports.items.second.link %>
+  <% sport1 = rssSports.entries.first.title %> 
+  <% link_to "#{sport1}", rssSports.items.first.link %>
 
-  <li><% sport3 = rssSports.entries.third.title %>
-  <%= link_to "#{sport3}", rssSports.items.third.link %>
+  <% sport2 = rssSports.entries.second.title %>
+  <% link_to "#{sport2}", rssSports.items.second.link %>
 
-  <li><% sport4 = rssSports.entries.fourth.title %>
-  <%= link_to "#{sport4}", rssSports.items.fourth.link %>
+  <% sport3 = rssSports.entries.third.title %>
+  <% link_to "#{sport3}", rssSports.items.third.link %>
 
-  <li><% sport5 = rssSports.entries.fifth.title %>
-  <%= link_to "#{sport5}", rssSports.items.fifth.link %>
+  <% sport4 = rssSports.entries.fourth.title %>
+  <% link_to "#{sport4}", rssSports.items.fourth.link %>
 
-  <li><% sport_last = rssSports.entries.last.title %>
-  <%= link_to "#{sport_last}", rssSports.items.last.link %>
-</ul> 
+  <% sport5 = rssSports.entries.fifth.title %>
+  <% link_to "#{sport5}", rssSports.items.fifth.link %>
+
+  <% sport_last = rssSports.entries.last.title %>
+  <% link_to "#{sport_last}", rssSports.items.last.link %>
 
 <div id="sport_scroll">
-  <%= sport1 + " * * * * " + sport2 + " * * * * " +
-  sport3 + " * * * * " + sport4 + " * * * * "
-  sport5 + " * * * * " + sport_last%>
+  <%= sport1 + " * * * * " + sport2 + " * * * * " + 
+  sport3 + " * * * * " + sport4 + " * * * * " +  
+  sport5 + " * * * * " + sport_last + " * * * * " %>
 </div>
+
+<% if current_user %>
+  <h5><%= link_to "Edit Your Profile", "/users/#{current_user.id}/edit"  %></h5>
+<% end %> 
+
+
+

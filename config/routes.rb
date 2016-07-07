@@ -16,13 +16,14 @@ Rails.application.routes.draw do
 
   get '/' => 'signally#index'
   get '/index' => 'signally#index'
+  get '/news' => 'signally#news'
   get '/sports' => 'signally#sports'
   get '/weather' => 'signally#weather'
   get '/about' => 'signally#about'
+  get '/show' => 'signally#show'
 
   get '/articles/:id' => 'articles#index'
 
   get '/news' => 'signally#news'
   
-
 end
