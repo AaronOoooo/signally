@@ -43,4 +43,5 @@ class SignallyController < ApplicationController
     @rss_sports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews')
   end
 
+
 end
