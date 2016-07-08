@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/weather' => 'signally#weather'
   get '/about' => 'signally#about'
   get '/show' => 'signally#show'
+  get '/user/:id' => 'signally#destroy'
 
   get '/articles/:id' => 'articles#index'
 

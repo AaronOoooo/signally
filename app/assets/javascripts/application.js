@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require require.js
+//= require main.js
 //= require_tree .
