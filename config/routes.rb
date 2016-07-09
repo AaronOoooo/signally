@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get '/show' => 'signally#show'
   get '/user/:id' => 'signally#destroy'
 
+  get '/news_landing' => 'bulletins#news_landing'
+  get 'sports_landing' => 'bulletins#sports_landing'
+
   get '/articles/:id' => 'articles#index'
 
   get '/news' => 'signally#news'

@@ -1,6 +1,28 @@
-<h1>Signally</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signally</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='body-background'>
+  <% num = rand(2) %>
+  <% if num == 0 %>
+    <%= link_to(image_tag("Signally.jpg", :alt => "Signally logo", :title => "Home"), "/") %>
+  <% else %>
+    <%= link_to(image_tag("Signally.jpg", :alt => "Signally logo", :title => "Home"), "/") %>
+  <% end %>
+<br>
+  <% if current_user %>
+    Signed in as <b><%= current_user.username %></b> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <% end %>
 
-  <body>
-    <h3><%= @message %></h3>
-    <%= image_tag('sports-games.jpg', :alt => 'Signally Sports') %>
-  </body>
+
+<%= yield %>
+
+
+</body>
+</html>

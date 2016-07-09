@@ -1,0 +1,27 @@
+<h2><% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %></h2>
+
+<h2><%= rssSports.channel.title  %></h2>
+<ul>
+
+  <li><% sport1 = rssSports.entries.first.title %> 
+  <%= link_to "#{sport1}", rssSports.items.first.link %>
+
+  <li><% sport2 = rssSports.entries.second.title %>
+  <%= link_to "#{sport2}", rssSports.items.second.link %>
+
+  <li><% sport3 = rssSports.entries.third.title %>
+  <%= link_to "#{sport3}", rssSports.items.third.link %>
+
+  <li><% sport4 = rssSports.entries.fourth.title %>
+  <%= link_to "#{sport4}", rssSports.items.fourth.link %>
+
+  <li><% sport5 = rssSports.entries.fifth.title %>
+  <%= link_to "#{sport5}", rssSports.items.fifth.link %>
+
+  <li><% sport_last = rssSports.entries.last.title %>
+  <%= link_to "#{sport_last}", rssSports.items.last.link %>
+</ul>
+
+<% if current_user %>
+  <h5><%= link_to "Edit Your Profile", "/users/#{current_user.id}/edit"  %></h5>
+<% end %> 

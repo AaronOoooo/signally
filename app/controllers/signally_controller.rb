@@ -20,6 +20,7 @@ class SignallyController < ApplicationController
 
   end
 
+
   def sports
     @message = "Signally provides you with details about the sports actions with information about scores, teams and the individuals who play at their hardest."
   end
