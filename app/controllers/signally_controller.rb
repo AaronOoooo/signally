@@ -7,9 +7,11 @@ class SignallyController < ApplicationController
     @message = "Welcome to Signally, an convenient, informational web app that gives you news tailored to met the needs of your lifestyle."
     @articles = Article.all
 
-    @rss_news = SimpleRSS.parse open('http://feeds.reuters.com/reuters/topNews')
+    @rss_news = SimpleRSS.parse(open('http://feeds.reuters.com/reuters/topNews'))
+    @news_scroll = build_scroll(@rss_news)
     
-    @rss_sports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews')
+    @rss_sports = SimpleRSS.parse(open('http://feeds.reuters.com/reuters/sportsNews'))
+    @sports_scroll = build_scroll(@rss_sports)
 
     @rss_news_title = @rss_news.entries
 
@@ -42,6 +44,16 @@ class SignallyController < ApplicationController
     @rss_news_title = @rss_news.entries.first.title
     
     @rss_sports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews')
+  end
+
+private
+
+  def build_scroll(feed)
+    scroll_string = ''
+    6.times do |index|
+      scroll_string += feed.entries[index].title + " * * * * "
+    end
+    scroll_string
   end
 
 

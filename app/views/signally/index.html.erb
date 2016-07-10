@@ -1,64 +1,71 @@
-<% require 'open-uri' %>
+<div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:-500px -10000px;"></div>
+  <div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:-500px -8000px;"></div>
+  <div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:-500px -6000px;"></div>
 
-<h2><%= @rss_news.channel.title  %></h2>
-<% title = @rss_news.channel.title %>
+  <div id="progress" data-0="width:0%;background:hsl(200, 100%, 50%);" data-end="width:100%;background:hsl(920, 100%, 50%);"></div>
 
-<% headline1 = @rss_news.entries.first.title %>
-  <% link_to "#{headline1}", @rss_news.items.first.link %>
-
-  <% headline2 = @rss_news.entries.second.title %>
-  <% link_to "#{headline2}", @rss_news.items.second.link %>
-
-  <% headline3 = @rss_news.entries.third.title %>
-  <% link_to "#{headline3}", @rss_news.items.third.link %>
-
-  <% headline4 = @rss_news.entries.fourth.title %> 
-  <% link_to "#{headline4}", @rss_news.items.fourth.link %>
-
-  <% headline5 = @rss_news.entries.fifth.title %> 
-  <% link_to "#{headline5}", @rss_news.items.fifth.link %>
-
-  <% headline_last = @rss_news.entries.last.title %> 
-  <% link_to "#{headline_last}", @rss_news.items.last.link %>
-
-
-<div id="headline_scroll">
-  <%= headline1 + " * * * * " + headline2 + " * * * * " +
-  headline3 + " * * * * " + headline4 + " * * * * " +
-  headline5 + " * * * * " + headline_last%>
-</div>
-
-<% rssSports = SimpleRSS.parse open('http://feeds.reuters.com/reuters/sportsNews') %>
-
-<h2><%= rssSports.channel.title  %></h2>
-
-  <% sport1 = rssSports.entries.first.title %> 
-  <% link_to "#{sport1}", rssSports.items.first.link %>
-
-  <% sport2 = rssSports.entries.second.title %>
-  <% link_to "#{sport2}", rssSports.items.second.link %>
-
-  <% sport3 = rssSports.entries.third.title %>
-  <% link_to "#{sport3}", rssSports.items.third.link %>
-
-  <% sport4 = rssSports.entries.fourth.title %>
-  <% link_to "#{sport4}", rssSports.items.fourth.link %>
-
-  <% sport5 = rssSports.entries.fifth.title %>
-  <% link_to "#{sport5}", rssSports.items.fifth.link %>
-
-  <% sport_last = rssSports.entries.last.title %>
-  <% link_to "#{sport_last}", rssSports.items.last.link %>
-
-<div id="sport_scroll">
-  <%= sport1 + " * * * * " + sport2 + " * * * * " + 
-  sport3 + " * * * * " + sport4 + " * * * * " +  
-  sport5 + " * * * * " + sport_last + " * * * * " %>
-</div>
-
-<% if current_user %>
-  <h5><%= link_to "Edit Your Profile", "/users/#{current_user.id}/edit"  %></h5>
-<% end %> 
+  <div id="intro" data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;" data-400="opacity:0;top:-10%;background-color: #d966ff">
+    <h1><a href="https://github.com/Prinzhorn/skrollr">Signally</a></h1>
+    <h2>News Title (update link)</h2
+      <% if current_user %>
+    Signed in as <b><%= current_user.username %></b> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <% end %>
 
 
 
+
+
+
+
+
+  <p>Scrolling Headline here</p>
+  </div>
+
+    <div id="intro" data-300="top:100%;" data-800="top:0%;" data-1000="display:block;" data-1700="top:-100%;display:none;background-color: #4d94ff">
+
+    <h2><%= @rss_news.channel.title  %></h2>
+    <% title = @rss_news.channel.title %>
+
+    <% 6.times do |index| %>
+      <% headline = @rss_news.entries[index].title %>
+      <% link_to "#{headline}", @rss_news.items[index].link %>
+    <% end %>
+
+    <div id="headline_scroll" class="ticker">
+      <%= @news_scroll %>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div id="intro" data-1100="top:100%;" data-1600="top:0%;" data-1800="display:block;" data-2500="top:-100%;display:none;background-color: #ff944d">
+      <h2><%= @rss_sports.channel.title  %></h2>
+
+      <% 6.times do |index| %>
+        <% sport_headline = @rss_sports.entries[index].title %> 
+        <% link_to "#{sport_headline}", @rss_sports.items[index].link %>
+      <% end %>
+
+
+      <div id="sport_scroll" class="ticker">
+        <%= @sports_scroll %>
+      </div>
+  </div>
+
+  <div id="intro" data-1900="top:100%;" data-2400="top:0%;" data-2600="display:block;" data-3300="top:-100%;display:none;background-color: #ff4d4d">
+
+    <h2>Weather</h2>
+    <p>WEATHER scroll right here!!!</p>
+  </div>
+
+
+
+  <div id="scrollbar" data-0="top:0%;margin-top:2px;" data-end="top:100%;margin-top:-52px;"></div>

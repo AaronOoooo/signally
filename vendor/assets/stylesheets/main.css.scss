@@ -102,17 +102,17 @@ h4 {
 	left:0;
 	width:100%;
 	height:100%;
-	background:url(images/bubbles.png) repeat 0 0;
+	background: image-url("bubbles.png") repeat 0 0;
 }
 
 #bg2 {
 	z-index:49;
-	background-image:url(images/bubbles2.png);
+	background-image: image-url("bubbles2.png");
 }
 
 #bg3 {
 	z-index:48;
-	background-image:url(images/bubbles3.png);
+	background-image: image-url("bubbles3.png");
 }
 
 #intro {
@@ -149,7 +149,7 @@ h4 {
 	text-align:center;
 	font-size:150%;
 
-	.transform-origin(50%, 50%);
+	// .transform-origin(50%, 50%);
 }
 
 #properties {

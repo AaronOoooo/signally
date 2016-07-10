@@ -1,0 +1,8 @@
+.ticker{
+  overflow: hidden;
+  height: 1em;
+  background-color: white;
+  padding: 0.1em;
+  border: 1px solid black;
+  border-radius: 2px;
+}

@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= skrollr.min.js
-//= require require
-//= require main
+//= require skrollr
 //= require scroll_text
+
 //= require_tree .

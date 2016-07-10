@@ -1,19 +1,23 @@
-require.config({
-	baseUrl: "./assets",
-	paths: {
-		'skrollr' : "skrollr.min"
-	},
-	waitSeconds: 15
-});
+$(function(){
+	
+	require.config({
+		baseUrl: "",
+		paths: {
+			'skrollr' : "skrollr"
+		},
+		waitSeconds: 15
+	});
 
-require(['skrollr'], function(skrollr){
-	var s = skrollr.init({
-		edgeStrategy: 'set',
-		easing: {
-			WTF: Math.random,
-			inverted: function(p) {
-				return 1-p;
+	require(['skrollr'], function(skrollr){
+		var s = skrollr.init({
+			edgeStrategy: 'set',
+			easing: {
+				WTF: Math.random,
+				inverted: function(p) {
+					return 1-p;
+				}
 			}
-		}
+		});
 	});
 });
+

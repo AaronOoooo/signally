@@ -6,51 +6,33 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
- <!--  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- -->
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <title>Signally</title>
 
-  <!-- <link href="fixed-positioning.css" rel="stylesheet" type="text/css" />
-  <link href="main.css" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <body>
-  <div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:-500px -10000px;"></div>
-  <div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:-500px -8000px;"></div>
-  <div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:-500px -6000px;"></div>
-
-  <div id="progress" data-0="width:0%;background:hsl(200, 100%, 50%);" data-end="width:100%;background:hsl(920, 100%, 50%);"></div>
-
-  <div id="intro" data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;" data-400="opacity:0;top:-10%;background-color: #e6ccff">
-    <h1><a href="https://github.com/Prinzhorn/skrollr">Signally</a></h1>
-    <h2>News Title (update link)</h2>
-    <p>Scrolling Headline here</p>
-  </div>
-
-  <div id="intro" data-300="top:100%;" data-800="top:0%;" data-1000="display:block;" data-1700="top:-100%;display:none;background-color: #4d94ff">
-    <h2>News</h2>
-    <p>News scroll here</p>
-  </div>
-
-  <div id="intro" data-1100="top:100%;" data-1600="top:0%;" data-1800="display:block;" data-2500="top:-100%;display:none;background-color: #ff944d">
-    <h2>Sports</h2>
-    <div id="background-color: #ffffff">
-      <p>SPORTS scroll right here!!!</p>
-    </div>
-    
-  </div>
-
-<div id="intro" data-1900="top:100%;" data-2400="top:0%;" data-2600="display:block;" data-3300="top:-100%;display:none;background-color: #ff4d4d">
-
-    <h2>Weather</h2>
-    <p>WEATHER scroll right here!!!</p>
-  </div>
-
-  <div id="scrollbar" data-0="top:0%;margin-top:2px;" data-end="top:100%;margin-top:-52px;"></div>
-
+  
   <%= yield %>
 
+<script type="text/javascript">
+  $(function(){
+    skrollr.init({
+      edgeStrategy: 'set',
+      easing: {
+        WTF: Math.random,
+        inverted: function(p) {
+          return 1-p;
+        }
+      }
+    }); 
+  });
+</script>
 
 </body>
 
 </html>
+

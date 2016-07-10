@@ -2,6 +2,7 @@
 
 <h2><% rss_news = SimpleRSS.parse open('http://feeds.reuters.com/reuters/TopNews') %><h2>
 
+
 <h2><%= @rss_news.channel.title  %></h2>
 <% title = @rss_news.channel.title %>
 
