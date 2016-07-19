@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/sports' => 'signally#sports'
   get '/weather' => 'signally#weather'
   get '/about' => 'signally#about'
+  get '/business' => 'signally#business'
+  get 'entertainment' => 'signally#entertainment'
+  post '/particle' => 'signally#particle'
   get '/show' => 'signally#show'
   get '/user/:id' => 'signally#destroy'
 

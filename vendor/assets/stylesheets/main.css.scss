@@ -139,6 +139,27 @@ h4 {
 	box-sizing: border-box;
 }
 
+#intro2 {
+	width:80%;
+	left:50%;
+	top:1em;
+	margin-left:-40%;
+	padding:2em;
+	background:#ddd;
+	text-align:center;
+	border-radius:1em;
+
+	-webkit-transform-origin:0 0;
+	-moz-transform-origin:0 0;
+	-ms-transform-origin:0 0;
+	-o-transform-origin:0 0;
+	transform-origin:0 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 #intro .arrows {
 	font-size:2em;
 	color:#09f;

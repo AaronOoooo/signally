@@ -1,0 +1,22 @@
+<% require 'open-uri' %>
+
+<% rssEntertainment = SimpleRSS.parse open('http://feeds.reuters.com/reuters/entertainment') %>
+
+<h2><%= rssEntertainment.channel.title  %></h2>
+  <% entertainment1 = rssEntertainment.entries.first.title %> 
+  <%= link_to "#{entertainment1}", rssEntertainment.items.first.link %>
+
+  <% entertainment2 = rssEntertainment.entries.second.title %>
+  <%= link_to "#{entertainment2}", rssEntertainment.items.second.link %>
+
+  <% entertainment3 = rssEntertainment.entries.third.title %>
+  <%= link_to "#{entertainment3}", rssEntertainment.items.third.link %>
+
+  <% entertainment4 = rssEntertainment.entries.fourth.title %>
+  <%= link_to "#{entertainment4}", rssEntertainment.items.fourth.link %>
+
+  <% entertainment5 = rssEntertainment.entries.fifth.title %>
+  <%= link_to "#{entertainment5}", rssEntertainment.items.fifth.link %>
+
+  <% entertainment_last = rssEntertainment.entries.last.title %>
+  <%= link_to "#{entertainment_last}", rssEntertainment.items.last.link %>

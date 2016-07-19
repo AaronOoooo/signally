@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var shiftCharacter = arr.shift();
     var restOfString = arr.join("");
     intialElement.innerHTML = restOfString + shiftCharacter;
-  },250);
+  },100);
 });
 
 document.addEventListener("DOMContentLoaded", function(event) { 
@@ -17,5 +17,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var shiftCharacter = arr.shift();
     var restOfString = arr.join("");
     intialElement.innerHTML = restOfString + shiftCharacter;
-  },200);
+  },100);
+});
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var intialElement = document.getElementById('business_scroll');
+
+  setInterval(function(){
+    var arr = intialElement.innerHTML.split("");
+    var shiftCharacter = arr.shift();
+    var restOfString = arr.join("");
+    intialElement.innerHTML = restOfString + shiftCharacter;
+  },100);
+});
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var intialElement = document.getElementById('entertainment_scroll');
+
+  setInterval(function(){
+    var arr = intialElement.innerHTML.split("");
+    var shiftCharacter = arr.shift();
+    var restOfString = arr.join("");
+    intialElement.innerHTML = restOfString + shiftCharacter;
+  },100);
 });

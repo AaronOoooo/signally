@@ -1,0 +1,26 @@
+<% require 'open-uri' %>
+
+<% rssBusiness = SimpleRSS.parse open('http://feeds.reuters.com/reuters/businessNews') %>
+
+<h2><%= @rssBusiness.channel.title  %></h2>
+<% title = @rssBusiness.channel.title %>
+
+<ul>
+  <li><% business1 = @rssBusiness.entries.first.title %>
+  <%= link_to "#{business1}", @rssBusiness.items.first.link %>
+
+  <li><% business2 = @rssBusiness.entries.second.title %>
+  <%= link_to "#{business2}", @rssBusiness.items.second.link %>
+
+  <li><% business3 = @rssBusiness.entries.third.title %>
+  <%= link_to "#{business3}", @rssBusiness.items.third.link %>
+
+  <li><% business4 = @rssBusiness.entries.fourth.title %> 
+  <%= link_to "#{business4}", @rssBusiness.items.fourth.link %>
+
+  <li><% business5 = @rssBusiness.entries.fifth.title %> 
+  <%= link_to "#{business5}", @rssBusiness.items.fifth.link %>
+
+  <li><% business_last = @rssBusiness.entries.last.title %> 
+  <%= link_to "#{business_last}", @rssBusiness.items.last.link %>
+</ul>
