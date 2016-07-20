@@ -9,7 +9,30 @@
 
 #intro {
   background: linear-gradient(
-      rgba(255, 0, 0, 0.55), 
-      rgba(255, 0, 0, 0.25)    ), url(blueprint.jpg);
+      rgba(106, 175, 216, .0), 
+      rgba(106, 175, 150, 1)    ), url(blueprint.jpg);
 }
 
+#intro2 {
+  background: linear-gradient(
+      rgba(255, 154, 30, .85), 
+      rgba(255, 154, 30, .45)    ), url(blueprint.jpg);
+}
+
+#intro3 {
+  background: linear-gradient(
+      rgba(148, 15, 181, .45), 
+      rgba(148, 15, 181, .75)    ), url(blueprint.jpg);
+}
+
+#intro4 {
+  background: linear-gradient(
+      rgba(0, 126, 33, .25), 
+      rgba(0, 126, 33, .75)    ), url(blueprint.jpg);
+}
+
+#intro5 {
+  background: linear-gradient(
+      rgba(237, 43, 38, .55), 
+      rgba(237, 43, 38, .75)    ), url(blueprint.jpg);
+}

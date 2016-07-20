@@ -41,3 +41,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     intialElement.innerHTML = restOfString + shiftCharacter;
   },100);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+var d = document,
+    x = d.querySelector('#intro2'),
+    link = d.createElement('a');
+
+    x.appendChild(link);
+    link.innerHTML = "Hello, this is the news link";
+    link.setAttribute('href', '/news');
+});
+
