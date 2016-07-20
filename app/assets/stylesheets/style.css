@@ -8,6 +8,7 @@
 }
 
 #intro {
+  z-index: 50;
   background: linear-gradient(
       rgba(106, 175, 216, .0), 
       rgba(106, 175, 150, 1)    ), url(blueprint.jpg);

@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   },100);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-var d = document,
-    x = d.querySelector('#intro2'),
-    link = d.createElement('a');
+// document.addEventListener("DOMContentLoaded", function() {
+// var d = document,
+//     x = d.querySelector('#intro2'),
+//     link = d.createElement('a');
 
-    x.appendChild(link);
-    link.innerHTML = "Hello, this is the news link";
-    link.setAttribute('href', '/news');
-});
+//     x.appendChild(link);
+//     link.innerHTML = "Hello, this is the news link";
+//     link.setAttribute('href', '/news');
+// });
 
